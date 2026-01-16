@@ -1,0 +1,85 @@
+1. PROJECT OVERVIEW
+Project Title: CineSense – Smart Movie Recommendation Platform
+Tech Stack: MERN + AI
+MongoDB – Database
+Express.js – Backend
+React.js – Frontend
+Node.js – Server
+Python (ML Recommendation Engine)
+TMDB API – Movie Data
+Objective:
+To build an intelligent platform that recommends movies based on user mood, preferences, and watch history instead of showing generic trending content.
+2. PROBLEM STATEMENT
+Current movie platforms:
+Show repetitive and generic recommendations
+Ignore user mood and emotions
+Poor personalization for niche tastes
+Too many choices confuse users
+No learning from user feedback
+Users spend more time searching than watching.
+3. PROPOSED SOLUTION
+A smart web platform where:
+Users choose their mood
+System analyzes preferences and ratings
+AI engine generates personalized suggestions
+Feedback improves accuracy over time
+Clean and fast UI experience
+4. USER ROLES & PERMISSIONS
+User
+Register and Login
+Select preferred genres and languages
+Choose mood
+View recommended movies
+Rate movies
+Create watchlist
+View recommendation history
+Admin
+Manage movie database
+Manage users
+Monitor system performance
+View analytics
+Module 3: Recommendation Engine Module
+Collect User Behavior Data
+Analyze Ratings and Watch History
+Mood-Based Filtering
+Generate Personalized Recommendations
+Continuous Learning and Optimization
+Accuracy Evaluation
+
+5. DATABASE STRUCTURE (Schemas)
+User Schema
+Name
+Email
+Password (Hashed)
+PreferredGenres (Array)
+WatchHistory (Array of Movie IDs)
+Ratings (Map)
+Role
+Movie Schema
+Title
+Genre
+Language
+ReleaseYear
+PosterURL
+Description
+PopularityScore
+Recommendation Schema
+UserID
+Mood
+RecommendedMovies
+Timestamp
+6. FEATURE WORKFLOW (User Journey)
+User logs in
+Selects mood
+System analyzes user profile
+AI generates recommendations
+Movies displayed instantly
+User watches and rates
+System learns and improves
+7. API ENDPOINTS
+Authentication
+POST /api/auth/register
+Register a new user
+POST /api/auth/login
+Login user and return token
+

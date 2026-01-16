@@ -4,6 +4,11 @@ require('dotenv').config();
 const connectDB = require('./config/db');
 
 const authRoutes = require('./routes/auth');
+const movieRoutes = require('./routes/movies');
+const userRoutes = require('./routes/users');
+const recommendationRoutes = require('./routes/recommendations');
+const watchlistRoutes = require('./routes/watchlist');
+const ratingRoutes = require('./routes/ratings');
 
 // Connect to MongoDB
 connectDB();
@@ -22,6 +27,11 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/auth', authRoutes);
+app.use('/api/movies', movieRoutes);
+app.use('/api/users', userRoutes);
+app.use('/api/recommendations', recommendationRoutes);
+app.use('/api/watchlist', watchlistRoutes);
+app.use('/api/ratings', ratingRoutes);
 
 const PORT = process.env.PORT || 5000;
 
