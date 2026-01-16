@@ -107,6 +107,52 @@ const api = {
     const response = await axios.get(`${API_URL}/ratings`);
     return response.data;
   },
+
+  // Admin
+  async getAdminStats() {
+    const response = await axios.get(`${API_URL}/admin/stats`);
+    return response.data;
+  },
+
+  async getAdminUsers(params = {}) {
+    const response = await axios.get(`${API_URL}/admin/users`, { params });
+    return response.data;
+  },
+
+  async getAdminUser(id) {
+    const response = await axios.get(`${API_URL}/admin/users/${id}`);
+    return response.data;
+  },
+
+  async updateAdminUser(id, data) {
+    const response = await axios.put(`${API_URL}/admin/users/${id}`, data);
+    return response.data;
+  },
+
+  async deleteAdminUser(id) {
+    const response = await axios.delete(`${API_URL}/admin/users/${id}`);
+    return response.data;
+  },
+
+  async getAdminMovies(params = {}) {
+    const response = await axios.get(`${API_URL}/admin/movies`, { params });
+    return response.data;
+  },
+
+  async addAdminMovie(data) {
+    const response = await axios.post(`${API_URL}/admin/movies`, data);
+    return response.data;
+  },
+
+  async updateAdminMovie(id, data) {
+    const response = await axios.put(`${API_URL}/admin/movies/${id}`, data);
+    return response.data;
+  },
+
+  async deleteAdminMovie(id) {
+    const response = await axios.delete(`${API_URL}/admin/movies/${id}`);
+    return response.data;
+  },
 };
 
 export default api;

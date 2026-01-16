@@ -9,6 +9,10 @@ import Recommendations from './pages/Recommendations.jsx';
 import MovieDetail from './pages/MovieDetail.jsx';
 import Watchlist from './pages/Watchlist.jsx';
 import RecommendationHistory from './pages/RecommendationHistory.jsx';
+import AdminRoute from './components/AdminRoute.jsx';
+import AdminDashboard from './pages/AdminDashboard.jsx';
+import AdminUsers from './pages/AdminUsers.jsx';
+import AdminMovies from './pages/AdminMovies.jsx';
 
 function App() {
   const { user, logout, isAuthenticated } = useAuth();
@@ -42,6 +46,9 @@ function App() {
               <Link to="/watchlist">Watchlist</Link>
               <Link to="/recommendations/history">History</Link>
               <Link to="/profile">Profile</Link>
+              {user?.role === 'admin' && (
+                <Link to="/admin">Admin</Link>
+              )}
               <span>
                 Logged in as
                 {' '}
@@ -124,6 +131,30 @@ function App() {
               <ProtectedRoute>
                 <Profile />
               </ProtectedRoute>
+            )}
+          />
+          <Route
+            path="/admin"
+            element={(
+              <AdminRoute>
+                <AdminDashboard />
+              </AdminRoute>
+            )}
+          />
+          <Route
+            path="/admin/users"
+            element={(
+              <AdminRoute>
+                <AdminUsers />
+              </AdminRoute>
+            )}
+          />
+          <Route
+            path="/admin/movies"
+            element={(
+              <AdminRoute>
+                <AdminMovies />
+              </AdminRoute>
             )}
           />
           <Route path="/login" element={<Login />} />
